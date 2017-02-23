@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="15G1108" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Element" representedClassName="Element" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="referance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reference" inverseName="element" inverseEntity="Reference" syncable="YES"/>
+    </entity>
+    <entity name="Molecule" representedClassName="Molecule" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="references" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reference" inverseName="molecule" inverseEntity="Reference" syncable="YES"/>
+    </entity>
+    <entity name="Reference" representedClassName="Reference" syncable="YES" codeGenerationType="class">
+        <attribute name="percentage" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="element" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Element" inverseName="referance" inverseEntity="Element" syncable="YES"/>
+        <relationship name="molecule" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Molecule" inverseName="references" inverseEntity="Molecule" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Element" positionX="385" positionY="215" width="128" height="73"/>
+        <element name="Molecule" positionX="-54" positionY="240" width="128" height="88"/>
+        <element name="Reference" positionX="171" positionY="153" width="128" height="88"/>
+    </elements>
+</model>
